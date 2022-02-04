@@ -12,12 +12,12 @@ in
 , version   ? "9.1"
 , hadrianCabal ? (builtins.getEnv "PWD") + "/hadrian/hadrian.cabal"
 , nixpkgs-unstable ? import (sources.nixpkgs-unstable) {}
-, useClang  ? false  # use Clang for C compilation
-, withLlvm  ? false
+, useClang  ? true  # use Clang for C compilation
+, withLlvm  ? true
 , withDocs  ? true
-, withGhcid ? false
-, withIde   ? false
-, withHadrianDeps ? false
+, withGhcid ? true
+, withIde   ? true
+, withHadrianDeps ? true
 , withDwarf  ? nixpkgs.stdenv.isLinux  # enable libdw unwinding support
 , withNuma   ? nixpkgs.stdenv.isLinux
 , withDtrace ? nixpkgs.stdenv.isLinux
